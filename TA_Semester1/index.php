@@ -1,8 +1,5 @@
 <?php
-// ... Kode PHP logika (RAB_Dinding.php) dan pemrosesan POST tetap sama ...
 include 'RAB_Dinding.php'; 
-// ... (Variabel dan logika pemrosesan form) ...
-// ...
 
 $error = null;
 $hasilPerhitungan = null;
@@ -13,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tinggi = $_POST['tinggi'] ?? '';
     $jenis = $_POST['jenis_dinding'] ?? '';
 
-    // Validasi Sederhana
     if (empty($panjang) || empty($tinggi) || empty($jenis) || !is_numeric($panjang) || !is_numeric($tinggi) || $panjang <= 0 || $tinggi <= 0) {
         $error = "Mohon masukkan nilai Panjang dan Tinggi yang valid (> 0) dan pilih Jenis Dinding.";
     } else {
@@ -36,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Daftar pilihan untuk dropdown
 $jenisPilihan = [
     'Bata_1PC:4PS' => 'Bata Merah 1PC:4PS (Standar Kuat)', 
     'Bata_1PC:6PS' => 'Bata Merah 1PC:6PS (Standar Umum)'
@@ -141,4 +136,5 @@ $jenisPilihan = [
         </main>
     </div>
 </body>
+
 </html>
